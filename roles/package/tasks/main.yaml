@@ -6,6 +6,10 @@
   ansible.builtin.service:
     name: httpd
     enabled: yes
+- copy:
+    src: "httpd.conf"
+    dest: /etc/httpd/conf/
+    
 - name: Start service httpd, if not started
   ansible.builtin.service:
     name: httpd
