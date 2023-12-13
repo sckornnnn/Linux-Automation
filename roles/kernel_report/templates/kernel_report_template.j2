@@ -4,26 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Kernel Report</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #3366cc;
-        }
-        p {
-            color: #333;
-        }
-    </style>
 </head>
 <body>
     <h1>Linux Kernel Report</h1>
-
-    {% for host, facts in ansible_play_hosts_all|dictsort %}
-        <h2>{{ host }}</h2>
-        <p>Kernel Version: {{ kernel_version }}</p>
-        <p>Hostname: {{ nsible_hostname }}</p>
-        <!-- Add more system facts as needed -->
-    {% endfor %}
+    <table border="1">
+        <tr>
+            <th>Hostname</th>
+            <th>Kernel Version</th>
+        </tr>
+        {% for host, info in ansible_play_batch %}
+            <tr>
+                <td>{{ host }}</td>
+                <td>{{ info['kernel_version']['stdout'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
