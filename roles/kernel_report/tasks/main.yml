@@ -14,3 +14,4 @@
   ansible.builtin.template:
     src: kernel_report_template.j2
     dest: /var/www/html/linux/kernel_report.html
+  delegate_to: localhost
