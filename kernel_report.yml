@@ -1,6 +1,5 @@
 - name: Linux Kernel Report
   hosts: all
   become: true
-  become_user: fthadmin
   roles:
     - kernel_report
