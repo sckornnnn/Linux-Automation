@@ -13,7 +13,7 @@
 
 - name: Read Existing Report
   ansible.builtin.slurp:
-    path: /path/to/existing/kernel_report.html
+    path: /tmp/kernel_report.html
   register: existing_report_content
 
 - name: Include Existing Report
@@ -23,4 +23,4 @@
 - name: Update HTML Report
   ansible.builtin.template:
     src: kernel_report_template.j2
-    dest: /path/to/local/kernel_report_updated.html
+    dest: /tmp/kernel_report_updated.html
