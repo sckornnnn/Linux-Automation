@@ -1,5 +1,6 @@
 - name: Linux Kernel Report
   hosts: all
   become: true
+  gathter_facts: true
   roles:
     - kernel_report
