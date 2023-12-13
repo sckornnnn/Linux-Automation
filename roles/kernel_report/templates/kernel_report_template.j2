@@ -12,7 +12,7 @@
             <th>Hostname</th>
             <th>Kernel Version</th>
         </tr>
-        {% for host, info in ansible_play_batch %}
+        {% for host in ansible_play_batch %}
             <tr>
                 <td>{{ host }}</td>
                 <td>{{ kernel_version }}</td>
