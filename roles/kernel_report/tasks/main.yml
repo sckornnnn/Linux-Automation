@@ -1,3 +1,4 @@
+
 - name: Get Linux Kernel Version
   ansible.builtin.shell: uname -r
   register: kernel_version_output
@@ -10,8 +11,16 @@
   ansible.builtin.setup:
   register: system_facts
 
-- name: Generate HTML Report
+- name: Read Existing Report
+  ansible.builtin.slurp:
+    path: /path/to/existing/kernel_report.html
+  register: existing_report_content
+
+- name: Include Existing Report
+  set_fact:
+    existing_report: "{{ existing_report_content.content | b64decode | default('') }}"
+
+- name: Update HTML Report
   ansible.builtin.template:
     src: kernel_report_template.j2
-    dest: /var/www/html/linux/kernel_report.html
-  delegate_to: localhost
+    dest: /path/to/local/kernel_report_updated.html
