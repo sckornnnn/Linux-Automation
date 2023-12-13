@@ -12,5 +12,5 @@
 
 - name: Generate HTML Report
   ansible.builtin.template:
-    src: kernel_report_template.j2
+    src: template/kernel_report_template.j2
     dest: /root/kernel_report.html
