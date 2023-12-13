@@ -1,0 +1,20 @@
+---
+- name: Gather Linux Kernel Report
+  hosts: your_target_group
+  tasks:
+    - name: Get Linux Kernel Version
+      ansible.builtin.shell: uname -r
+      register: kernel_version_output
+
+    - name: Set Kernel Version Fact
+      set_fact:
+        kernel_version: "{{ kernel_version_output.stdout }}"
+
+    - name: Gather System Facts
+      ansible.builtin.setup:
+      register: system_facts
+
+    - name: Generate HTML Report
+      ansible.builtin.template:
+        src: kernel_report_template.j2
+        dest: /path/to/output/kernel_report.html
