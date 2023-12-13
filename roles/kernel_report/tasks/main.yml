@@ -3,6 +3,14 @@
   command: uname -r
   register: kernel_version
 
+- name: Set Facts
+      set_fact:
+        kernel_version: "{{ kernel_version_output.stdout }}"
+
+    - name: Debug Kernel Version
+      debug:
+        msg: "{{ inventory_hostname }} {{ kernel_version }}"
+        
 - name: Create HTML Report
   template:
     src: kernel_report_template.j2
