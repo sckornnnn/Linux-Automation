@@ -15,7 +15,7 @@
         {% for host in ansible_play_batch %}
             <tr>
                 <td>{{ host }}</td>
-                <td>{{ kernel_version }}</td>
+                <td>{{ hostvars[host].kernel_version }}</td>
             </tr>
         {% endfor %}
     </table>
