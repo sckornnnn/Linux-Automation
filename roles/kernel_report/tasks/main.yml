@@ -1,17 +1,22 @@
 
-- name: Get Linux Kernel Version
+- name: Get Kernel Version
   command: uname -r
-  register: kernel_version
+  register: kernel_version_output
 
 - name: Set Facts
-      set_fact:
-        kernel_version: "{{ kernel_version_output.stdout }}"
+  set_fact:
+    kernel_version: "{{ kernel_version_output.stdout }}"
+    ansible_dist: "{{ ansible_distribution }}"
+    hostname: "{{ ansible_hostname }}"
+    version: "{{ ansible_distribution_version }}"
 
-    - name: Debug Kernel Version
-      debug:
-        msg: "{{ inventory_hostname }} {{ kernel_version }}"
-        
-- name: Create HTML Report
+- name: Debug Kernel Version
+  debug:
+    msg: "{{ inventory_hostname }} {{ansible_dist }}  {{ kernel_version }} {{ hostname }} {{ version }}"
+
+- name: create HTML report
   template:
-    src: kernel_report_template.j2
-    dest: /tmp/kernel_report.html
+    src: report.j2
+    dest: /var/www/html/linux/kernel_report.html
+  delegate_to: localhost
+  run_once: true
