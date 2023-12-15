@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kernel Information Report</title>
+</head>
+<body>
+    <h1>Kernel Information Report</h1>
+    <ul>
+        {% for host in ansible_play_batch %}
+            <li>
+                <strong>{{hostvars[host].hostname }} </strong>:
+                 <ul>
+                    <li>Linux os-release: {{ hostvars[host].ansible_dist }} {{ hostvars[host].version }} </li>
+                </ul>
+                 <ul>
+                    <li>Kernel Version: {{ hostvars[host].kernel_version }}</li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
