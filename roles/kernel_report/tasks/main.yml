@@ -17,6 +17,6 @@
 - name: create HTML report
   template:
     src: report.j2
-    dest: /var/www/html/linux/kernel_report.html
-#  delegate_to: localhost
+    dest: /tmp/kernel_report.html
+  delegate_to: localhost
 #  run_once: true
