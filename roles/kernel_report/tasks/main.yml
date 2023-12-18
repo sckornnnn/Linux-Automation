@@ -39,8 +39,6 @@
   delegate_to: ansible-awx
 #  run_once: true
 #  become: no
-  become: true
-  become_user: root
 
 #- name: Remove file (delete file)
 #  ansible.builtin.file:
