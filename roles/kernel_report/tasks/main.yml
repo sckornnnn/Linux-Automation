@@ -31,7 +31,7 @@
   run_once: true
 #  become: no
 
- name: Remove file (delete file)
+- name: Remove file (delete file)
   ansible.builtin.file:
     path: /home/fthadmin/kernel_report.html
     state: absent
