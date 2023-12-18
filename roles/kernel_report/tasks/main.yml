@@ -33,14 +33,3 @@
 #  delegate_to: localhost
 #  run_once: true
 #  become: no
-
-- name: Copy file with owner and permissions
-  connection: local
-  ansible.builtin.copy:
-    src: kernel_report.html
-    dest: /var/www/html/
-    remote_src: yes 
-  delegate_to: localhost
-  run_once: true
-  become: no
-  become_user: root
