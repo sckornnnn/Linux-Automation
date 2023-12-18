@@ -23,11 +23,8 @@
   run_once: true
   become: no
 
-- name: Copy File to Web Server Example
-  hosts: your_web_server
-  become: yes  # This is used to escalate privileges, if necessary
-  tasks:
-    - name: Copy HTML file to web server
-      copy:
-        src: kernel_report.html
-        dest: /var/www/html/index.html
+
+- name: Copy HTML file to web server
+  copy:
+    src: kernel_report.html
+    dest: /var/www/html/index.html
