@@ -19,15 +19,15 @@
     src: report.j2
     dest: kernel_report.html
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-  delegate_to: localhost
+#  delegate_to: localhost
   run_once: true
-  become: no
+#  become: no
 
-- name: Store file 
-  ansible.builtin.fetch:
-    src: kernel_report.html
-    dest: /tmp/
-    flat: yes
-  delegate_to: ansible-awx
-  run_once: true
-  become: no
+#- name: Store file 
+#  ansible.builtin.fetch:
+#    src: kernel_report.html
+#    dest: /tmp/
+#    flat: yes
+#  delegate_to: ansible-awx
+#  run_once: true
+#  become: no
