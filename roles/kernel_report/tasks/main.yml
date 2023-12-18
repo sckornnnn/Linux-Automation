@@ -23,8 +23,7 @@
   run_once: true
   become: no
 
-
-- name: Copy HTML file to web server
-  copy:
+- name: Store file 
+  ansible.builtin.fetch:
     src: kernel_report.html
-    dest: /var/www/html/index.html
+    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
