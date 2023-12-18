@@ -38,4 +38,4 @@
     dest: /var/www/html/
   delegate_to: localhost
   run_once: true
-  become: no
+  become: yes
