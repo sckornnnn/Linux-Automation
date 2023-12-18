@@ -18,10 +18,10 @@
   template:
     src: report.j2
     dest: kernel_report.html
-#    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-#  delegate_to: localhost
+    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
+  delegate_to: localhost
   run_once: true
-#  become: no
+  become: no
 
 - name: Store file 
   ansible.builtin.fetch:
