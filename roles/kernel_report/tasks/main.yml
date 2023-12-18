@@ -29,3 +29,4 @@
     dest: /home/{{ ansible_ssh_user }}/kernel_report.html
   delegate_to: localhost
   run_once: true
+  become: no
