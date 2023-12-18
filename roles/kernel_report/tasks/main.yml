@@ -33,7 +33,7 @@
 #  run_once: true
 
 - name: copy HTML report
-  template:
+  ansible.builtin.copy:
     src: /home/fthadmin/kernel_report.html
     dest: var/www/html/linux/kernel_report.html
   delegate_to: ansible-awx
