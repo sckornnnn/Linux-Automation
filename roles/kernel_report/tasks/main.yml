@@ -32,13 +32,17 @@
 #  delegate_to: ansible-awx
 #  run_once: true
 
-#- name: copy HTML report
-#  ansible.builtin.copy:
-#    src: /home/fthadmin/kernel_report.html
-#    dest: var/www/html/linux/kernel_report.html
-#  delegate_to: ansible-awx
+- name: copy HTML report
+  ansible.builtin.copy:
+    src: /home/fthadmin/kernel_report.html
+    dest: var/www/html/linux/kernel_report.html
+  delegate_to: ansible-awx
 #  run_once: true
 #  become: no
+  become: true
+  become_method: su
+  become_user: root
+  become_flags: '-s /bin/sh'
 
 #- name: Remove file (delete file)
 #  ansible.builtin.file:
