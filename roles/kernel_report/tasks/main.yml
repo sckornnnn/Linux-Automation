@@ -17,6 +17,6 @@
 - name: create HTML report
   template:
     src: report.j2
-    dest: /home/{{ username }}/kernel_report.html
+    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
   delegate_to: localhost
   run_once: true
