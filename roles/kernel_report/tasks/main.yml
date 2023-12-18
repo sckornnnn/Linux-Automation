@@ -19,7 +19,6 @@
     src: report.j2
     dest: kernel_report.html
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-    remote_src: yes
   delegate_to: localhost
   run_once: true
   become: no
@@ -29,7 +28,6 @@
     src: kernel_report.html
     dest: /tmp/
     flat: yes
-    remote_src: yes
   delegate_to: ansible-awx
   run_once: true
   become: no
