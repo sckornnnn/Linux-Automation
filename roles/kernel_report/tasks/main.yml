@@ -19,7 +19,7 @@
     src: report.j2
     dest: kernel_report.html
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-  delegate_to: ansible-awx
+  delegate_to: localhost
   run_once: true
   become: no
 
@@ -27,3 +27,5 @@
   ansible.builtin.fetch:
     src: kernel_report.html
     dest: /home/{{ ansible_ssh_user }}/kernel_report.html
+  delegate_to: localhost
+  run_once: true
