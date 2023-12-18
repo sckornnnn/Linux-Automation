@@ -35,7 +35,7 @@
 - name: Copy file with owner and permissions
   connection: local
   ansible.builtin.copy:
-    src: /home/fthadmin/kernel_report.html
+    src: kernel_report.html
     dest: /var/www/html/
     remote_src: yes 
   delegate_to: localhost
