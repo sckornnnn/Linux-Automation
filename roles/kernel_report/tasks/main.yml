@@ -20,3 +20,4 @@
     dest: kernel_report.html
   delegate_to: localhost
   run_once: true
+  become: no
