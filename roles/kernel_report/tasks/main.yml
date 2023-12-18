@@ -27,6 +27,7 @@
   ansible.builtin.fetch:
     src: kernel_report.html
     dest: /tmp/
+    flat: yes
   delegate_to: localhost
 #  run_once: true
   become: no
