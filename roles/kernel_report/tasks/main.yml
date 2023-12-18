@@ -23,12 +23,12 @@
   run_once: true
 #  become: no
 
-- name: Remove file (delete file)
-  ansible.builtin.file:
-    path: /home/fthadmin/kernel_report.html
-    state: absent
-  delegate_to: ansible-awx
-  run_once: true
+#- name: Remove file (delete file)
+#  ansible.builtin.file:
+#    path: /home/fthadmin/kernel_report.html
+#    state: absent
+#  delegate_to: ansible-awx
+#  run_once: true
 
 - name: copy HTML report
   template:
