@@ -32,10 +32,10 @@
 #  run_once: true
   become: no
 
-- name: Copy file with owner and permissions
-  ansible.builtin.copy:
-    src: /tmp/kernel_report.html
-    dest: /home/fthadmin/
-  delegate_to: localhost
+#name: Copy file with owner and permissions
+# ansible.builtin.copy:
+#   src: /tmp/kernel_report.html
+#   dest: /home/fthadmin/
+# delegate_to: localhost
 #  run_once: true
-  become: no
+# become: no
