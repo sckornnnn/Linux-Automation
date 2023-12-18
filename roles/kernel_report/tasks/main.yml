@@ -23,13 +23,14 @@
   run_once: true
 #  become: no
 
-#- name: Store file 
-#  ansible.builtin.fetch:
-#    src: kernel_report.html
-#    dest: /tmp/
-#    flat: yes
-#  delegate_to: localhost
-#  run_once: true
+- name: Store file 
+  ansible.builtin.fetch:
+    src: kernel_report.html
+    dest: /tmp/
+    flat: yes
+    remote_src: yes
+  delegate_to: localhost
+  run_once: true
   become: no
 
 - name: Copy file with owner and permissions
