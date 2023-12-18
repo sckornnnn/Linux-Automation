@@ -27,7 +27,7 @@
   ansible.builtin.file:
     path: /home/fthadmin/kernel_report.html
     state: absent
-  elegate_to: ansible-awx
+  delegate_to: ansible-awx
   run_once: true
 
 - name: copy HTML report
