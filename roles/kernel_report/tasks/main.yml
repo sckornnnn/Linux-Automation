@@ -40,7 +40,7 @@
     group: root
     mode: '0644'
     backup: yes
-  elegate_to: ansible-awx
+  delegate_to: ansible-awx
 
 
 
