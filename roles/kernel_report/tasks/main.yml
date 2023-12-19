@@ -26,17 +26,16 @@
   run_once: true
   become: no
 
-- name: Ansible Copy Example Local to Remote
+  
+- name: copying file with playbook
+  become: true 
   hosts: ansible-awx
-  tasks:
-    - name: copying file with playbook
-      become: true 
-      copy:
-        src: /tmp/kernel_report.html
-        dest: /var/www/html
-        owner: apache
-        group: apache        
-        mode: 0644
+  copy:
+    src: /tmp/kernel_report.html
+    dest: /var/www/html
+    owner: apache
+    group: apache        
+    mode: 0644
 
 
 #- name: Remove file (delete file)
