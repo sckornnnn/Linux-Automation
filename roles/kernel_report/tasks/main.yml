@@ -36,12 +36,12 @@
 #  delegate_to: ansible-awx
 #  run_once: true
 
-#- name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
-#  ansible.builtin.copy:
-#    src: /etc/passwd
-#    dest: /etc/passwd.backup
-#    owner: root
-#    group: root
-#    mode: '0644'
-#    backup: yes
-#  delegate_to: ansible-awx
+- name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
+  ansible.builtin.copy:
+    src: /tmp/kernel_report.html
+    dest: /var/www/html/linux/kernel_report.html
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  delegate_to: ansible-awx
