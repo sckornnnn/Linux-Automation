@@ -18,8 +18,8 @@
   template:
     src: report.j2
     dest: /tmp/kernel_report.html
-    owner: root
-    group: root
+#    owner: root
+#    group: root
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
 #  delegate_to: ansible-awx
   delegate_to: localhost
