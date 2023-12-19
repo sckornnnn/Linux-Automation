@@ -38,7 +38,8 @@
 
 - name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
   ansible.builtin.copy:
-    src: /tmp/kernel_report.html
+  #  src: /tmp/kernel_report.html
+    src: /etc/passwd
     dest: /tmp/kernel_report.html.backup
     owner: root
     group: root
