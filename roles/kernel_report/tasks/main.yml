@@ -25,26 +25,3 @@
 #  delegate_to: localhost
   run_once: true
   become: no
-
-
-
-
-#- name: Remove file (delete file)
-#  ansible.builtin.file:
-#    path: /home/fthadmin/kernel_report.html
-#    state: absent
-#  delegate_to: ansible-awx
-#  run_once: true
-
-- name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
-  ansible.builtin.copy:
-  #  src: /tmp/kernel_report.html
-    src: /tmp/kernel_report.html
-    dest: /tmp/kernel_report.html.backup
-  #  owner: root
-  #  group: root
-  #  mode: '0644'
-    backup: yes
-  delegate_to: ansible-awx
-  run_once: true
-  become: no
