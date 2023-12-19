@@ -17,13 +17,15 @@
 - name: create HTML report
   template:
     src: report.j2
-    dest: kernel_report.html
+    dest: /tmp/kernel_report.html
     owner: fthadmin
     group: fthadmin
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-  delegate_to: ansible-awx
+#  delegate_to: ansible-awx
+  delegate_to: localhost
   run_once: true
-#  become: no
+  become: no
+
 
 #- name: Remove file (delete file)
 #  ansible.builtin.file:
@@ -32,31 +34,12 @@
 #  delegate_to: ansible-awx
 #  run_once: true
 
-- name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
-  ansible.builtin.copy:
-    src: /etc/passwd
-    dest: /etc/passwd.backup
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  delegate_to: ansible-awx
-
-
-
-- name: copy HTML report
-  ansible.builtin.copy:
-    src: /home/fthadmin/kernel_report.html
-    dest: /var/www/html/linux/kernel_report.html
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  delegate_to: ansible-awx
-#  run_once: true
-#  become: no
-
-#- name: Remove file (delete file)
-#  ansible.builtin.file:
-#    path: /home/fthadmin/kernel_report.html
-#    state: absent
+#- name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
+#  ansible.builtin.copy:
+#    src: /etc/passwd
+#    dest: /etc/passwd.backup
+#    owner: root
+#    group: root
+#    mode: '0644'
+#    backup: yes
+#  delegate_to: ansible-awx
