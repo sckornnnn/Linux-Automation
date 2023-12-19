@@ -41,9 +41,9 @@
   #  src: /tmp/kernel_report.html
     src: /etc/passwd
     dest: /tmp/kernel_report.html.backup
-    owner: root
-    group: root
-    mode: '0644'
+  #  owner: root
+  #  group: root
+  #  mode: '0644'
     backup: yes
   delegate_to: ansible-awx
   run_once: true
