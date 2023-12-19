@@ -21,20 +21,12 @@
 #    owner: root
 #    group: root
 #    dest: /home/{{ ansible_ssh_user }}/kernel_report.html
-#  delegate_to: ansible-awx
-  delegate_to: localhost
+  delegate_to: ansible-awx
+#  delegate_to: localhost
   run_once: true
   become: no
 
-  
-- name: copying file with playbook
-  hosts: ansible-awx
-  copy:
-    src: /tmp/kernel_report.html
-    dest: /var/www/html
-    owner: apache
-    group: apache        
-    mode: 0644
+
 
 
 #- name: Remove file (delete file)
