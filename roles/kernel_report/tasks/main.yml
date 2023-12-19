@@ -48,6 +48,10 @@
   ansible.builtin.copy:
     src: /home/fthadmin/kernel_report.html
     dest: /var/www/html/linux/kernel_report.html
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
   delegate_to: ansible-awx
 #  run_once: true
 #  become: no
