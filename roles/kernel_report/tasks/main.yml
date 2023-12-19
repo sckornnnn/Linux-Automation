@@ -28,7 +28,6 @@
 
   
 - name: copying file with playbook
-  become: true 
   hosts: ansible-awx
   copy:
     src: /tmp/kernel_report.html
