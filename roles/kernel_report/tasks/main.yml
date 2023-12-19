@@ -34,8 +34,8 @@
 
 - name: Copy a new "ntp.conf" file into place, backing up the original if it differs from the copied version
   ansible.builtin.copy:
-    src: /etc/ntp.conf
-    dest: /etc/ntp.conf.backup
+    src: /etc/passwd
+    dest: /etc/passwd.backup
     owner: root
     group: root
     mode: '0644'
